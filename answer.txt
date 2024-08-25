@@ -4,4 +4,8 @@ git config --global user.email "thoaiaust@gmail.com"
 
 Câu lệnh để cài đặt name
 git config --global user.name "..."
+<<<<<<< HEAD
 git config --global user.name "K9-Thoai"
+=======
+git config --global user.name "K9-Thoai"
+>>>>>>> e94b7ad192c5f42581d84c267402e2e511fa749c
