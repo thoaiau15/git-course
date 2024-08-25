@@ -1,0 +1,57 @@
+1.
+
+git init : Dùng để khởi tạo thư mục quản lí bới Git, thêm toàn bộ file vào vùng Working Directory
+git add <file name> : Dùng để thêm một file theo tên vào vùng Staging
+git add . : Dùng đê thêm toàn bộ file đang có ở cùng Working Directory vào vùng Staging 
+git commit -m "message" : Dùng để thêm file từ vùng Staging sang vùng Reposity
+
+2.
+
+git init -> Khởi tạo 3 file vào Working Directory
+	Working Directory
+		file1	file2	file3
+	Staging Area
+
+	Reposity
+
+--
+git commit -m "init-project" -> Vẫn giữ nguyên vì hong có file trong vùng Staging
+	Working Directory
+		file1	file2	file3
+	Staging Area
+
+	Reposity
+
+--
+git add file1 -> Thêm file file1 vào vùng Staging
+	Working Directory
+		file2	file3
+	Staging Area
+		file1
+	Reposity
+
+--
+git commit -m "add file1" -> Chuyển file1 từ vùng Staging qua vùng Reposity
+	Working Directory
+		file2	file3
+	Staging Area
+		
+	Reposity
+		file1 "add file1"
+--
+git add file -> Không thêm được file vào vùng Staging vì nó chưa tồn tại ở vùng Working
+	Working Directory
+		file2	file3
+	Staging Area
+		
+	Reposity
+		file1 "add file1"
+
+
+
+
+
+
+
+
+
