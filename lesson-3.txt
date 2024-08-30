@@ -1,0 +1,108 @@
+1.
+git commit --amend: Thay đổi message commit vào Insert
+git commit --amend -m ”<message>” Thay đổi message trực tiếp
+git restore --staged <file>: Đưa file từ vùng Staging về vùng Working 
+git reset HEAD~1: Đưa file từ vùng Reposity về vùng Working (1: undo 1 commit)
+
+2.
+
+git init -> Khởi tạo 3 file vào Working Directory
+	Working Directory
+		file1	file2	file3
+	Staging Area
+
+	Reposity
+
+--
+git commit -m "init project"-> Vẫn giữ nguyên vì không có file trong vùng Staging
+	Working Directory
+		file1	file2	file3
+	Staging Area
+
+	Reposity
+
+--
+git add file1 -> Đưa file1 từ vùng Working sang Staging
+	Working Directory
+		file2	file3
+	Staging Area
+        file1
+	Reposity
+
+--
+git commit -m "add file" -> Đưa file1 từ Staging sang Reposity kèm message: add file
+    Working Directory
+		file2	file3
+	Staging Area
+        
+	Reposity
+        file1("add file")
+--
+git add . -> Đưa tất cả các file chưa add từ vùng Working sang Staging
+    Working Directory   
+		
+	Staging Area
+        file2	file3
+	Reposity
+        file1("add file")
+--
+git restore --staged file2 -> Đưa file2 từ vùng Staging về vùng Working
+    Working Directory   
+		file2
+	Staging Area
+    	file3
+	Reposity
+        file1("add file")
+--
+git commit -m "add all files" -> Đưa các file có trong vùng Staging sang Reposity kèm message: add all files
+    Working Directory   
+		file2
+	Staging Area
+    	
+	Reposity
+        file1("add file")   file3("add all files")
+--
+git reset HEAD~1 -> Undo 1 commit: Đưa file3 vừa được commit từ Reposity về Working
+    Working Directory   
+		file2   file3
+	Staging Area
+    	
+	Reposity
+        file1("add file")   
+--
+
+3.
+git init -> Đưa các file vừa tạo vào vùng Working
+    Working Directory   
+		file1.txt   file2.txt   oops/file3.txt
+	Staging Area
+    	
+	Reposity
+
+--
+add file .gitignore
+    file1.txt
+    oops/
+
+    Working Directory   
+	   file1.txt   file2.txt   oops/file3.txt   .gitignore
+	Staging Area
+    	
+	Reposity
+--
+git add . -> Thêm file2 vào vùng Staging những file khác do ta đã thêm trong .gitignore nên nó không truy cập đc
+    Working Directory   
+	      
+	Staging Area
+    	file2
+	Reposity
+
+--
+git commt -m "init project" -> Chuyển file2 từ Staging sang Reposity
+    Working Directory   
+	      
+	Staging Area
+    	
+	Reposity
+        file2("init project")
+--
