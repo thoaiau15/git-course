@@ -85,7 +85,7 @@ add file .gitignore
     oops/
 
     Working Directory   
-	   file1.txt   file2.txt   oops/file3.txt   .gitignore
+	   file2.txt   .gitignore
 	Staging Area
     	
 	Reposity
@@ -94,15 +94,15 @@ git add . -> Thêm file2 vào vùng Staging những file khác do ta đã thêm 
     Working Directory   
 	      
 	Staging Area
-    	file2
+    	file2	.gitignore
 	Reposity
 
 --
-git commt -m "init project" -> Chuyển file2 từ Staging sang Reposity
+git commit -m "init project" -> Chuyển file2, .gitignore từ Staging sang Reposity
     Working Directory   
 	      
 	Staging Area
     	
 	Reposity
-        file2("init project")
+        file2	.gitignore ("init project")
 --
